@@ -1,5 +1,15 @@
 # Ansible-Wordpress-Deploy Documentation
 
+# What will be installed:
+* PHP7.0
+* PHP7.0-FPM
+* PHP-mysql
+* NginX
+* WordPressr
+* NetData
+* MySql-server
+* Default wordpress DataBase
+
 # Requirements:
 * Ubuntu 16.04 destination server
 * Linux / Unix based local machine
