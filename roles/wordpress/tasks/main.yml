@@ -1,0 +1,20 @@
+---
+- name: Download WordPress  
+  get_url:
+    url: https://wordpress.org/latest.zip 
+    dest: /tmp/wordpress.zip
+  become: true
+
+- name: Install unzip
+  become: true
+  apt: name=unzip state=present
+
+- name: Extract Wordpress 
+  unarchive: src=/tmp/wordpress.zip dest=/var/www/ copy=no
+  become: true
+
+- name: Add wordpress site to nginx
+  become: true
+  shell: ln -s /etc/nginx/sites-available/nginx-wp.conf /etc/nginx/sites-enabled/
+  ignore_errors: yes
+  notify: Restart Nginx
