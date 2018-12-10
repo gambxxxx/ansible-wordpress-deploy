@@ -1,11 +1,11 @@
 ---
 - name: Update apt cache
   apt: update_cache=yes cache_valid_time=3600
-  sudo: yes
+  become: true
 
 - name: Install required software
   apt: name={{ item }} state=present
-  sudo: yes
+  become: true 
   with_items:
     - git
     - nginx
