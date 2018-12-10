@@ -14,3 +14,10 @@
     - php7.0-mysql
     - php7.0
     - python-mysqldb
+    - fail2ban
+
+- name: Configure fail2ban
+  shell: cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
+
+- name: Install chrootkit
+  apt: name=chrootkit state=present
