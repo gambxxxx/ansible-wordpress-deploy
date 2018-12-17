@@ -1,4 +1,4 @@
-- hosts: local
+- hosts: local1
   become: true
   roles:
     - server
